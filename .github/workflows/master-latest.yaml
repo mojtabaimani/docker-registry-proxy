@@ -34,6 +34,7 @@ jobs:
           username: ${{ github.repository_owner }} # github username or org
           password: ${{ secrets.GITHUB_TOKEN }}    # github actions builtin token. repo has to have pkg access.
 
+
       # the arm64 is of course much slower due to qemu, so build and push amd64 **first**
       # due to the way manifests work, the gap between this and the complete push below
       #  could result in pull failures or inconsistencies for arm64, such is life.
