@@ -57,7 +57,7 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: linux/amd64
-          tags: rpardini/docker-registry-proxy:amd64-${{ steps.get_version.outputs.version }},ghcr.io/rpardini/docker-registry-proxy:amd64-${{ steps.get_version.outputs.version }}
+          tags: mojtabaimani/docker-registry-proxy:amd64-${{ steps.get_version.outputs.version }},ghcr.io/mojtabaimani/docker-registry-proxy:amd64-${{ steps.get_version.outputs.version }}
           push: true
 
       - name: Build and push amd64 Debug Docker Image to DockerHub/GitHub CR
@@ -70,7 +70,7 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: linux/amd64
-          tags: rpardini/docker-registry-proxy:amd64-${{ steps.get_version.outputs.version }}-debug,ghcr.io/rpardini/docker-registry-proxy:amd64-${{ steps.get_version.outputs.version }}-debug
+          tags: mojtabaimani/docker-registry-proxy:amd64-${{ steps.get_version.outputs.version }}-debug,ghcr.io/mojtabaimani/docker-registry-proxy:amd64-${{ steps.get_version.outputs.version }}-debug
           push: true
 
       # Do it all again with both archs. the amd64 will be a huge cache hit
@@ -85,7 +85,7 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: linux/arm64,linux/amd64
-          tags: rpardini/docker-registry-proxy:${{ steps.get_version.outputs.version }},ghcr.io/rpardini/docker-registry-proxy:${{ steps.get_version.outputs.version }}
+          tags: mojtabaimani/docker-registry-proxy:${{ steps.get_version.outputs.version }},ghcr.io/mojtabaimani/docker-registry-proxy:${{ steps.get_version.outputs.version }}
           push: true
 
       - name: Build and push multiarch Debug Docker Image to DockerHub/GitHub CR
@@ -98,6 +98,5 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: linux/arm64,linux/amd64
-          tags: rpardini/docker-registry-proxy:${{ steps.get_version.outputs.version }}-debug,ghcr.io/rpardini/docker-registry-proxy:${{ steps.get_version.outputs.version }}-debug
+          tags: mojtabaimani/docker-registry-proxy:${{ steps.get_version.outputs.version }}-debug,ghcr.io/mojtabaimani/docker-registry-proxy:${{ steps.get_version.outputs.version }}-debug
           push: true
-
